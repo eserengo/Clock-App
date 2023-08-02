@@ -1,0 +1,9 @@
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+[v-cloak] {
+  display: none;
+}
