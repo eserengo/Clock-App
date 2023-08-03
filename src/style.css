@@ -1,4 +1,5 @@
 :root {
+  --white: hsl(0, 0%, 99%);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -6,4 +7,35 @@
 
 [v-cloak] {
   display: none;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0%;
+  margin: 0%;
+  user-select: none;
+}
+
+body {
+  color: var(--white);
+}
+
+.icon,
+.btn {
+  cursor: pointer;
+}
+
+.daytime {
+  min-height: 100vh;
+  background-image: url("./assets/images/bg-image-daytime-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nighttime {
+  min-height: 100vh;
+  background-image: url("./assets/images/bg-image-nighttime-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
