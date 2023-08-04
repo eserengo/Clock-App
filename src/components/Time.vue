@@ -29,7 +29,7 @@
 import Location from './Location.vue';
 
 export default {
-  name: "Clock",
+  name: "Time",
   props: ["modelValue", "show"],
   emits: ["update:modelValue"],
   components: {
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      fetchedData: [],
+      timeData: [],
     }
   },
   methods: {
@@ -45,7 +45,7 @@ export default {
       try {
         const res = await fetch("http://worldtimeapi.org/api/ip");
         const json = await res.json();
-        this.fetchedData = json;
+        this.timeData = json;
       } catch (error) {
         throw new Error(error);
       };
@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     setTime() {
-      return this.fetchedData.datetime && this.fetchedData.datetime.toString().substring(11, 16);
+      return this.timeData.datetime && this.timeData.datetime.toString().substring(11, 16);
     },
     setValue() {
       return this.$emit(
@@ -64,23 +64,23 @@ export default {
       );
     },
     setTimezone() {
-      return this.fetchedData.timezone && this.fetchedData.timezone.toString();
+      return this.timeData.timezone && this.timeData.timezone.toString();
     },
     setDayOfWeek() {
-      return this.fetchedData.day_of_week && this.fetchedData.day_of_week.toString();
+      return this.timeData.day_of_week && this.timeData.day_of_week.toString();
     },
     setDayOfYear() {
-      return this.fetchedData.day_of_year && this.fetchedData.day_of_year.toString();
+      return this.timeData.day_of_year && this.timeData.day_of_year.toString();
     },
     setWeekNumber() {
-      return this.fetchedData.week_number && this.fetchedData.week_number.toString()
+      return this.timeData.week_number && this.timeData.week_number.toString()
     },
   },
   created() {
     this.getData();
   },
   mounted() {
-    setInterval(this.getData, 60000);
+    setInterval(this.getData(), 60000);
   },
   updated() {
     this.setValue;

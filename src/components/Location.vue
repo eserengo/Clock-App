@@ -7,7 +7,7 @@ export default {
   name: "Location",
   data() {
     return {
-      fetchedData: [],
+      locationData: [],
     }
   },
   methods: {
@@ -15,7 +15,7 @@ export default {
       try {
         const res = await fetch("http://ip-api.com/json/?fields=country,countryCode,city");
         const json = await res.json();
-        this.fetchedData = json;
+        this.locationData = json;
       } catch (error) {
         throw new Error(error);
       };
@@ -23,10 +23,10 @@ export default {
   },
   computed: {
     setCity() {
-      return this.fetchedData.city && this.fetchedData.city.toString().toUpperCase();
+      return this.locationData.city && this.locationData.city.toString().toUpperCase();
     },
     setCountry() {
-      return this.fetchedData.country && this.fetchedData.country.toString().toUpperCase();
+      return this.locationData.country && this.locationData.country.toString().toUpperCase();
     },
   },
   created() {

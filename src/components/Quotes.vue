@@ -12,7 +12,7 @@ export default {
   props: ["show"],
   data() {
     return {
-      fetchedData: [],
+      quotesData: [],
     }
   },
   methods: {
@@ -20,7 +20,7 @@ export default {
       try {
         const res = await fetch("https://api.quotable.io/random/");
         const json = await res.json();
-        this.fetchedData = json;
+        this.quotesData = json;
       } catch (error) {
         throw new Error(error);
       };
@@ -28,10 +28,10 @@ export default {
   },
   computed: {
     setContent() {
-      return this.fetchedData.content && this.fetchedData.content.toString();
+      return this.quotesData.content && this.quotesData.content.toString();
     },
     setAuthor() {
-      return this.fetchedData.author && this.fetchedData.author.toString();
+      return this.quotesData.author && this.quotesData.author.toString();
     },
   },
   created() {

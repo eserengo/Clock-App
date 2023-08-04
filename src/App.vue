@@ -4,14 +4,14 @@
     <section>
       <span v-if="greeting">
         <img src="./assets/images/icon-sun.svg" alt="sun icon" />
-        GOOD DAY, IT'S CURRENTLY
+        GOOD DAY, IT"S CURRENTLY
       </span>
       <span v-else>
         <img src="./assets/images/icon-moon.svg" alt="moon icon" />
-        GOOD NIGHT, IT'S CURRENTLY
+        GOOD NIGHT, IT"S CURRENTLY
       </span>
     </section>
-    <Clock v-model="greeting" :show="details" />
+    <Time v-model="greeting" :show="details" />
     <span>
       <button type="button" class="btn" v-if="details" @click="toggle" >
         LESS
@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import Clock from './components/Clock.vue';
-import Quotes from './components/Quotes.vue';
+import Time from "./components/Time.vue"
+import Quotes from "./components/Quotes.vue";
 
 export default {
   name: "App",
@@ -38,7 +38,7 @@ export default {
     };
   },
   components: {
-    Clock,
+    Time,
     Quotes,
   },
   methods: {
