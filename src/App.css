@@ -1,0 +1,58 @@
+/*
+ Name: Clock App
+ Description: A Frontendmentor.io coding challenge
+ Author: Federico Borzani
+ Author URL:  https://github.com/eserengo/
+*/
+
+@config "../tailwind.config.js";
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: "Inter", serif;  
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .daytime {
+    background-image: url("./assets/images/bg-image-daytime-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: cover;
+  }
+  
+  .nighttime {
+    background-image: url("./assets/images/bg-image-nighttime-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: cover;
+  }
+
+  @screen sm {
+    .daytime {
+      background-image: url("./assets/images/bg-image-daytime-tablet.jpg");
+    }
+    .nighttime {
+      background-image: url("./assets/images/bg-image-nighttime-tablet.jpg");
+    }
+  }
+
+  @screen md {
+    .daytime {
+      background-image: url("./assets/images/bg-image-daytime-desktop.jpg");
+    }
+    .nighttime {
+      background-image: url("./assets/images/bg-image-nighttime-desktop.jpg");
+    }
+  }
+}
+
+[v-cloak] {
+  display: none;
+}

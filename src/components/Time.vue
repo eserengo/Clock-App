@@ -1,6 +1,6 @@
 <template v-cloak>
   <section>
-    <p>{{ setTime }}</p>
+    <p class="text-5xl">{{ setTime }}</p>
     <Location />
   </section>
   <section v-show="show">

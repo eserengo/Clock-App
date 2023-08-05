@@ -1,5 +1,7 @@
 <template v-cloak>
-  <main :class="[ greeting ? 'daytime' : 'nighttime' ]">
+  <main
+    :class="[ greeting ? 'daytime' : 'nighttime' ]"
+    class="text-light">
     <Quotes :show="details" />
     <section>
       <span v-if="greeting">
