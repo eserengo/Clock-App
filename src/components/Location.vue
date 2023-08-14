@@ -1,5 +1,5 @@
 <template v-cloak>
-  <p>IN {{ setCity }}, {{ setCountry }}</p>
+  <p class="uppercase">in {{ setCity }}, {{ setCountry }}</p>
 </template>
 
 <script>
@@ -17,16 +17,18 @@ export default {
         const json = await res.json();
         this.locationData = json;
       } catch (error) {
-        throw new Error(error);
+        this.locationData.push(error);
       };
     },
   },
   computed: {
     setCity() {
-      return this.locationData.city && this.locationData.city.toString().toUpperCase();
+      return this.locationData.city
+        ? this.locationData.city
+        : this.locationData;
     },
     setCountry() {
-      return this.locationData.country && this.locationData.country.toString().toUpperCase();
+      return this.locationData.country && this.locationData.country;
     },
   },
   created() {

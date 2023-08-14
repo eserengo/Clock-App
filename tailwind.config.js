@@ -14,6 +14,11 @@ export default {
       "medium": "hsl(0, 0%, 75%)",
       "dark": "hsl(0, 0%, 15%)",
     },
+    extend: {
+      minWidth: {
+        "custom": "250px",
+      },
+    },
   },
   plugins: [],
 }
